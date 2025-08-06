@@ -1,0 +1,6 @@
+name: Manually Run Git Action
+
+on:
+  workflow_dispatch:
+
+jobs:
