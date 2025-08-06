@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  Manually Run Git Action:
+  manually_run_git_action:
     runs-on: ubuntu-latest
-    
+
     steps:
      - name: Create Git Action
        uses: actions/checkout@v2
