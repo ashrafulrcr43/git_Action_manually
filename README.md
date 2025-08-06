@@ -16,4 +16,34 @@ jobs:
        run: |
          cat hello.txt
 </pre>
-# Check The name Left side, Run Manually Form Right side select Brach and refresh
+## Check The name Left side, Run Manually Form Right side select Brach and refresh
+
+# 2. Create Button under workflow 
+<pre>
+  name: manually run
+
+on:
+  workflow_dispatch:
+    inputs:
+      example_input:
+        description: 'Choose your Service'
+        required: true
+        default: 'staging'
+    
+    options:
+      - staging
+      - production
+
+jobs:
+  manually_run_git_action:
+    runs-on: ubuntu-latest
+
+    steps:
+     - name: Create Git Action
+       uses: actions/checkout@v2
+     - name: Print hello text file
+       run: |
+         cat hello.txt
+
+  
+</pre>
