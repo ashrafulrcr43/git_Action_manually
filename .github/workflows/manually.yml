@@ -1,4 +1,4 @@
-name: Manually Run Git Action
+name: manually run
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ jobs:
     steps:
      - name: Create Git Action
        uses: actions/checkout@v2
-     - name: Print hello
+     - name: Print hello text file
        run: |
          cat hello.txt
 
