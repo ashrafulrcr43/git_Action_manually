@@ -2,6 +2,15 @@ name: manually run
 
 on:
   workflow_dispatch:
+    inputs:
+      example_input:
+        description: 'Choose your Service'
+        required: true
+        default: 'staging'
+    
+    options:
+      - staging
+      - production
 
 jobs:
   manually_run_git_action:
