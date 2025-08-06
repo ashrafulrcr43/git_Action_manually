@@ -1,4 +1,5 @@
 # 1. Write yml File 
+<pre>
 name: manually run
 
 on:
@@ -14,5 +15,5 @@ jobs:
      - name: Print hello text file
        run: |
          cat hello.txt
-
+</pre>
 # Check The name Left side, Run Manually Form Right side select Brach and refresh
