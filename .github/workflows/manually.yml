@@ -7,10 +7,10 @@ on:
         description: 'Choose your Service'
         required: true
         default: 'staging'
-    
-    options:
-      - staging
-      - production
+        type: choice
+        options:
+         - staging
+         - production
 
 jobs:
   manually_run_git_action:
