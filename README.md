@@ -20,7 +20,7 @@ jobs:
 
 # 2. Create Button under workflow 
 <pre>
-  name: manually run
+name: manually run
 
 on:
   workflow_dispatch:
@@ -29,10 +29,10 @@ on:
         description: 'Choose your Service'
         required: true
         default: 'staging'
-    
-    options:
-      - staging
-      - production
+        type: choice
+        options:
+         - staging
+         - production
 
 jobs:
   manually_run_git_action:
@@ -45,5 +45,6 @@ jobs:
        run: |
          cat hello.txt
 
+  
   
 </pre>
