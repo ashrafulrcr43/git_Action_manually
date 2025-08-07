@@ -48,3 +48,36 @@ jobs:
   
   
 </pre>
+# 3. Print user input => staging, production that print when select 
+<pre>
+
+  name: manually run
+
+on:
+  workflow_dispatch:
+    inputs:
+      example_input:
+        description: 'Choose your Service'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+         - staging
+         - production
+
+jobs:
+  manually_run_git_action:
+    runs-on: ubuntu-latest
+
+    steps:
+     - name: Create Git Action
+       uses: actions/checkout@v2
+     - name: print user input
+       run: |
+          echo "user input: '${{inputs.example_input}}'"
+     - name: Print hello text file
+       run: |
+         cat hello.txt
+
+  
+</pre>
