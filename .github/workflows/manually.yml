@@ -11,6 +11,9 @@ on:
         options:
          - staging
          - production
+eve:
+  Ashraful: "Hello World"
+
 
 jobs:
   manually_run_git_action:
@@ -19,6 +22,10 @@ jobs:
     steps:
      - name: Create Git Action
        uses: actions/checkout@v2
+     - name: Print env variable
+       run: |
+         echo "${{ env.Ashraful }}"
+         
      - name: print user input
        run: |
           if [ "${{ github.event.inputs.example_input }}" == "staging" ]; then
