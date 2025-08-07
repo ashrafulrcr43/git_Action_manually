@@ -21,7 +21,15 @@ jobs:
        uses: actions/checkout@v2
      - name: print user input
        run: |
-          echo "user input: '${{inputs.example_input}}'"
+          if [ "${{ github.event.inputs.example_input }}" == "staging" ]; then
+            echo "You selected staging"
+          elif [ "${{ github.event.inputs.example_input }}" == "production" ]; then
+            echo "You selected production"
+          else
+            echo "Invalid input"
+          fi
+
+
      - name: Print hello text file
        run: |
          cat hello.txt
