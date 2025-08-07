@@ -170,3 +170,5 @@ jobs:
 
   
 </pre>
+# 6. make secret variable 
+
