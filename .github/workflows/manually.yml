@@ -19,6 +19,9 @@ jobs:
     steps:
      - name: Create Git Action
        uses: actions/checkout@v2
+     - name: print user input
+       run: |
+          echo "user input: '${inputs.example_input}'"
      - name: Print hello text file
        run: |
          cat hello.txt
