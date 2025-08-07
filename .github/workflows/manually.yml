@@ -11,7 +11,7 @@ on:
         options:
          - staging
          - production
-eve:
+env:
   Ashraful: "Hello World"
 
 
@@ -25,7 +25,7 @@ jobs:
      - name: Print env variable
        run: |
          echo "${{ env.Ashraful }}"
-         
+
      - name: print user input
        run: |
           if [ "${{ github.event.inputs.example_input }}" == "staging" ]; then
