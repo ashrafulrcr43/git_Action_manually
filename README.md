@@ -138,7 +138,7 @@ on:
         options:
          - staging
          - production
-eve:
+env:
   Ashraful: "Hello World"
 
 
