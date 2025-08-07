@@ -122,3 +122,51 @@ jobs:
 
   
 </pre>
+
+# 5. Make variable and print the variable 
+<pre>
+  name: manually run
+
+on:
+  workflow_dispatch:
+    inputs:
+      example_input:
+        description: 'Choose your Service'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+         - staging
+         - production
+eve:
+  Ashraful: "Hello World"
+
+
+jobs:
+  manually_run_git_action:
+    runs-on: ubuntu-latest
+
+    steps:
+     - name: Create Git Action
+       uses: actions/checkout@v2
+     - name: Print env variable
+       run: |
+         echo "${{ env.Ashraful }}"
+         
+     - name: print user input
+       run: |
+          if [ "${{ github.event.inputs.example_input }}" == "staging" ]; then
+            echo "You selected staging"
+          elif [ "${{ github.event.inputs.example_input }}" == "production" ]; then
+            echo "You selected production"
+          else
+            echo "Invalid input"
+          fi
+
+
+     - name: Print hello text file
+       run: |
+         cat hello.txt
+
+  
+</pre>
